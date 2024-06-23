@@ -8,7 +8,7 @@ def send_notification(
     sns_client: Any,
     message: str,
     subject: str,
-    topic_arn: str = "arn:aws:sns:us-east-1:176924676374:item-availability-updates",
+    topic_arn: str,
 ):
     return sns_client.publish(
         TopicArn=topic_arn,
