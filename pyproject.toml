@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "product_stock_check"
+description = "Check product stock on given webpages and notify on availability."
+readme = "README.md"
+version = "0.0.1"
+authors = [
+  {name = "Charlie Bushrow", email = "charlie.bushrow@gmail.com"},
+]
+requires-python = ">= 3.7"
+dependencies = [
+  "boto3",
+  "requests",
+  "bs4",
+]
+
+[project.optional-dependencies]
+test = [
+    "botocore",
+    "pytest",
+]
+
+[project.scripts]
+check_products_stock = "product_stock_check.check_products:check_all_products"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+pythonpath = [
+  "src"
+]
+testpaths = [
+    "test"
+]
