@@ -1,3 +1,4 @@
+#!/bin/bash
 fileDir=$(realpath ${0%/*})
 projDir=$(dirname $fileDir)
 projName=$(basename $projDir)
